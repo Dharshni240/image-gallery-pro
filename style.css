@@ -1,0 +1,137 @@
+body {
+  margin: 0;
+  font-family: Arial;
+  background: #0f0f0f;
+  color: white;
+}
+
+/* HEADER */
+header {
+  text-align: center;
+  padding: 20px;
+}
+
+#search {
+  padding: 10px;
+  width: 60%;
+  border-radius: 20px;
+  border: none;
+  outline: none;
+}
+
+/* FILTERS */
+.filters {
+  text-align: center;
+  margin: 10px;
+}
+
+.filters button {
+  padding: 10px 15px;
+  margin: 5px;
+  border: none;
+  cursor: pointer;
+  background: #333;
+  color: white;
+  border-radius: 10px;
+  transition: 0.3s;
+}
+
+.filters button:hover {
+  background: #00c3ff;
+}
+
+/* GALLERY */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 15px;
+  padding: 20px;
+}
+
+.img-box {
+  position: relative;
+}
+
+.img-box img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 12px;
+  transition: 0.3s;
+}
+
+.img-box img:hover {
+  transform: scale(1.05);
+  filter: brightness(80%);
+}
+
+.img-box button {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  border: none;
+  background: rgba(0,0,0,0.6);
+  color: white;
+  padding: 5px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+/* LIGHTBOX */
+#lightbox {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.95);
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+#lightbox img {
+  width: 60%;
+  border-radius: 10px;
+  animation: zoom 0.3s;
+}
+
+@keyframes zoom {
+  from { transform: scale(0.5); }
+  to { transform: scale(1); }
+}
+
+.close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 40px;
+  cursor: pointer;
+}
+
+.controls button {
+  font-size: 30px;
+  margin: 10px;
+  background: transparent;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+#downloadBtn {
+  margin-top: 10px;
+  padding: 10px 15px;
+  border: none;
+  background: #00c3ff;
+  color: black;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+/* RESPONSIVE */
+@media (max-width: 600px) {
+  #lightbox img {
+    width: 90%;
+  }
+}
