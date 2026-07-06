@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pro Image Gallery</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+  <h1>🔥 Pro Image Gallery</h1>
+
+  <input type="text" id="search" placeholder="Search images..." onkeyup="searchImages()">
+</header>
+
+<!-- FILTERS -->
+<div class="filters">
+  <button onclick="filterImages('all')">All</button>
+  <button onclick="filterImages('nature')">Nature</button>
+  <button onclick="filterImages('city')">City</button>
+</div>
+
+<!-- GALLERY -->
+<div class="gallery">
+
+  <div class="img-box nature">
+    <img src="images/nature1.jpg" onclick="openLightbox(this)">
+    <button onclick="likeImage(this)">❤️</button>
+  </div>
+
+  <div class="img-box city">
+    <img src="images/city1.jpg" onclick="openLightbox(this)">
+    <button onclick="likeImage(this)">❤️</button>
+  </div>
+
+  <div class="img-box nature">
+    <img src="images/nature2.jpg" onclick="openLightbox(this)">
+    <button onclick="likeImage(this)">❤️</button>
+  </div>
+
+  <div class="img-box city">
+    <img src="images/city2.jpg" onclick="openLightbox(this)">
+    <button onclick="likeImage(this)">❤️</button>
+  </div>
+
+</div>
+
+<!-- LIGHTBOX -->
+<div id="lightbox">
+  <span onclick="closeLightbox()" class="close">&times;</span>
+
+  <img id="lightbox-img">
+
+  <div class="controls">
+    <button onclick="changeImage(-1)">⟨</button>
+    <button onclick="changeImage(1)">⟩</button>
+  </div>
+
+  <button id="downloadBtn">⬇ Download</button>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
